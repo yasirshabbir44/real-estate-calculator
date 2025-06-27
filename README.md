@@ -106,6 +106,16 @@ For backend development, you can run the Spring Boot application using:
 ./gradlew bootRun
 ```
 
+### Default Data
+
+The application initializes the database with default data when it starts up:
+
+- **Properties**: Sample properties of different types (apartments, villas, townhouses) in various Dubai communities
+- **Document Checklists**: Standard document requirements for different buyer types (salaried, self-employed, investor)
+- **Service Charge Estimates**: Typical service charge rates for different communities and property types
+
+This default data helps users get started with the application without having to enter data manually.
+
 ### Frontend Development
 
 For frontend development with hot-reloading, you can run the React development server:

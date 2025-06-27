@@ -24,6 +24,7 @@ const Navbar = () => {
             <Link to="/properties" className="text-white hover:text-secondary-light transition-colors duration-200">Properties</Link>
             <Link to="/property-comparison" className="text-white hover:text-secondary-light transition-colors duration-200">Compare</Link>
             <Link to="/loan-calculator" className="text-white hover:text-secondary-light transition-colors duration-200">Loan Calculator</Link>
+            <Link to="/rent-vs-buy" className="text-white hover:text-secondary-light transition-colors duration-200">Rent vs Buy</Link>
             <div className="relative group">
               <button className="text-white hover:text-secondary-light transition-colors duration-200">More</button>
               <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden group-hover:block">
@@ -59,6 +60,7 @@ const Navbar = () => {
             <Link to="/properties" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Properties</Link>
             <Link to="/property-comparison" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Compare</Link>
             <Link to="/loan-calculator" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Loan Calculator</Link>
+            <Link to="/rent-vs-buy" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Rent vs Buy</Link>
             <Link to="/document-checklist" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Document Checklist</Link>
             <Link to="/service-charge-estimate" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Service Charges</Link>
             <Link to="/cost-breakdown" className="block px-3 py-2 text-white hover:bg-primary-dark rounded-md transition-colors duration-200">Cost Breakdown</Link>

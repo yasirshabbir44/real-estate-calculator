@@ -10,6 +10,7 @@ import LoanCalculator from './pages/LoanCalculator';
 import DocumentChecklist from './pages/DocumentChecklist';
 import ServiceChargeEstimate from './pages/ServiceChargeEstimate';
 import CostBreakdown from './pages/CostBreakdown';
+import RentVsBuy from './pages/RentVsBuy';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/properties/:id" element={<PropertyDetail />} />
             <Route path="/property-comparison" element={<PropertyComparison />} />
             <Route path="/loan-calculator" element={<LoanCalculator />} />
+            <Route path="/rent-vs-buy" element={<RentVsBuy />} />
             <Route path="/document-checklist" element={<DocumentChecklist />} />
             <Route path="/service-charge-estimate" element={<ServiceChargeEstimate />} />
             <Route path="/cost-breakdown" element={<CostBreakdown />} />

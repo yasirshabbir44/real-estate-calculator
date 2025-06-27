@@ -74,7 +74,8 @@ public interface PropertyComparisonRepository extends JpaRepository<PropertyComp
     /**
      * Delete all property comparisons for a property.
      *
-     * @param property the property to delete property comparisons for
+     * @param property1 the first property to delete property comparisons for
+     * @param property2 the second property to delete property comparisons for
      */
-    void deleteByProperty1OrProperty2(Property property);
+    void deleteByProperty1OrProperty2(Property property1, Property property2);
 }

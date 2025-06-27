@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,19 +34,19 @@ public class DataInitializer {
             PropertyRepository propertyRepository,
             DocumentChecklistRepository documentChecklistRepository,
             ServiceChargeEstimateRepository serviceChargeEstimateRepository) {
-        
+
         return args -> {
             // Initialize default properties
             initializeProperties(propertyRepository);
-            
+
             // Initialize default document checklists
             initializeDocumentChecklists(documentChecklistRepository, propertyRepository);
-            
+
             // Initialize default service charge estimates
             initializeServiceChargeEstimates(serviceChargeEstimateRepository, propertyRepository);
         };
     }
-    
+
     /**
      * Initializes default properties in the database.
      *
@@ -56,7 +57,7 @@ public class DataInitializer {
         if (propertyRepository.count() > 0) {
             return;
         }
-        
+
         // Create default properties
         List<Property> defaultProperties = Arrays.asList(
             new Property(
@@ -70,7 +71,8 @@ public class DataInitializer {
                 "Apartment", 
                 "Downtown Dubai", 
                 true, 
-                2020
+                2020,
+                    Collections.singletonList("https://example.com/images/downtown-apartment.jpg")
             ),
             new Property(
                 null, 
@@ -83,7 +85,8 @@ public class DataInitializer {
                 "Villa", 
                 "Arabian Ranches", 
                 false, 
-                2018
+                2018,
+                    Collections.singletonList("https://example.com/images/arabian-ranches-villa.jpg")
             ),
             new Property(
                 null, 
@@ -96,7 +99,8 @@ public class DataInitializer {
                 "Townhouse", 
                 "Dubai Hills Estate", 
                 false, 
-                2021
+                2021,
+                    Collections.singletonList("https://example.com/images/dubai-hills-townhouse.jpg")
             ),
             new Property(
                 null, 
@@ -109,7 +113,8 @@ public class DataInitializer {
                 "Apartment", 
                 "Jumeirah Beach Residence", 
                 true, 
-                2010
+                2010,
+                    Collections.singletonList("https://example.com/images/jbr-apartment.jpg")
             ),
             new Property(
                 null, 
@@ -122,14 +127,15 @@ public class DataInitializer {
                 "Penthouse", 
                 "Dubai Marina", 
                 true, 
-                2015
+                2015,
+                    Collections.singletonList("https://example.com/images/marina-penthouse.jpg")
             )
         );
-        
+
         // Save default properties
         propertyRepository.saveAll(defaultProperties);
     }
-    
+
     /**
      * Initializes default document checklists in the database.
      *
@@ -143,10 +149,10 @@ public class DataInitializer {
         if (documentChecklistRepository.count() > 0) {
             return;
         }
-        
+
         // Get first property for reference
         Property property = propertyRepository.findAll().get(0);
-        
+
         // Create default document checklists
         List<DocumentChecklist> defaultChecklists = Arrays.asList(
             new DocumentChecklist(
@@ -207,11 +213,11 @@ public class DataInitializer {
                 false
             )
         );
-        
+
         // Save default document checklists
         documentChecklistRepository.saveAll(defaultChecklists);
     }
-    
+
     /**
      * Initializes default service charge estimates in the database.
      *
@@ -225,7 +231,7 @@ public class DataInitializer {
         if (serviceChargeEstimateRepository.count() > 0) {
             return;
         }
-        
+
         // Create default service charge estimates for common communities and property types
         List<ServiceChargeEstimate> defaultEstimates = Arrays.asList(
             // Downtown Dubai - Apartment
@@ -339,10 +345,10 @@ public class DataInitializer {
                 true
             )
         );
-        
+
         // Save default service charge estimates
         serviceChargeEstimateRepository.saveAll(defaultEstimates);
-        
+
         // Create property-specific service charge estimates for the first property
         Property firstProperty = propertyRepository.findAll().get(0);
         ServiceChargeEstimate propertyEstimate = new ServiceChargeEstimate(
@@ -366,7 +372,7 @@ public class DataInitializer {
             LocalDate.now(),
             false
         );
-        
+
         // Save property-specific service charge estimate
         serviceChargeEstimateRepository.save(propertyEstimate);
     }

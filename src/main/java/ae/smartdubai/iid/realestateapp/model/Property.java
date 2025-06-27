@@ -1,15 +1,22 @@
 package ae.smartdubai.iid.realestateapp.model;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Entity representing a real estate property.
@@ -48,4 +55,9 @@ public class Property {
     private Boolean isFurnished;
 
     private Integer yearBuilt;
+
+    @ElementCollection
+    @CollectionTable(name = "property_images", joinColumns = @JoinColumn(name = "property_id"))
+    @Column(name = "image_url")
+    private List<String> images = new ArrayList<>();
 }

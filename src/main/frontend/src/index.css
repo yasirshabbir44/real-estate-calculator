@@ -360,4 +360,29 @@ code {
   .glass-dark {
     @apply bg-secondary-900/70 backdrop-blur-sm border border-secondary-800/50 text-white;
   }
+
+  /* React Select Custom Styling */
+  .react-select-container .react-select__control {
+    @apply bg-white border border-gray-300 rounded-xl shadow-sm;
+  }
+
+  .react-select-container .react-select__control:hover {
+    @apply border-primary;
+  }
+
+  .react-select-container .react-select__control--is-focused {
+    @apply border-primary ring-2 ring-primary-100;
+  }
+
+  .react-select-container .react-select__menu {
+    @apply bg-white border border-gray-200 rounded-xl shadow-lg mt-1;
+  }
+
+  .react-select-container .react-select__option {
+    @apply text-secondary-800 bg-white hover:bg-primary-50 hover:text-primary cursor-pointer py-2;
+  }
+
+  .react-select-container .react-select__option--is-selected {
+    @apply bg-primary text-white;
+  }
 }

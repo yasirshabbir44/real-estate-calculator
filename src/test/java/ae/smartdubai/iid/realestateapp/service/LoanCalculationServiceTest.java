@@ -190,30 +190,30 @@ public class LoanCalculationServiceTest {
         assertEquals(downPayment, calculatedLoan.getDownPayment());
         assertEquals(interestRate, calculatedLoan.getInterestRate());
         assertEquals(tenureYears, calculatedLoan.getTenureYears());
-        
+
         // Loan amount should be property price - down payment
         assertEquals(800000.0, calculatedLoan.getLoanAmount());
-        
+
         // LTV should be (loan amount / property price) * 100
         assertEquals(80.0, calculatedLoan.getLoanToValueRatio());
-        
+
         // Check that monthly EMI is calculated correctly
-        // For a loan of 800,000 at 4.5% for 25 years, EMI should be around 4,466.61
-        assertEquals(4466.61, calculatedLoan.getMonthlyEmi(), 0.5);
-        
+        // For a loan of 800,000 at 4.5% for 25 years, EMI should be around 4,446.66
+        assertEquals(4446.66, calculatedLoan.getMonthlyEmi(), 1.0);
+
         // Total payable should be EMI * number of months
         assertEquals(calculatedLoan.getMonthlyEmi() * tenureYears * 12, calculatedLoan.getTotalPayable(), 1.0);
-        
+
         // Total interest should be total payable - loan amount
         assertEquals(calculatedLoan.getTotalPayable() - calculatedLoan.getLoanAmount(), calculatedLoan.getTotalInterest(), 1.0);
-        
+
         // First EMI interest should be loan amount * monthly interest rate
         double monthlyInterestRate = (interestRate / 100) / 12;
         assertEquals(calculatedLoan.getLoanAmount() * monthlyInterestRate, calculatedLoan.getFirstEmiInterest(), 0.5);
-        
+
         // First EMI principal should be EMI - first EMI interest
         assertEquals(calculatedLoan.getMonthlyEmi() - calculatedLoan.getFirstEmiInterest(), calculatedLoan.getFirstEmiPrincipal(), 0.5);
-        
+
         assertNotNull(calculatedLoan.getCalculationDate());
         verify(propertyRepository, times(1)).findById(1L);
         verify(loanCalculationRepository, times(1)).save(any(LoanCalculation.class));

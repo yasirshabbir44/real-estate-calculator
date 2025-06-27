@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.3'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.github.node-gradle.node' version '3.5.1'
 }
 
 group = 'ae.smartdubai.iid'
@@ -32,3 +33,39 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// Node configuration for building the React frontend
+node {
+    version = '16.15.0'
+    npmVersion = '8.5.5'
+    download = true
+    workDir = file("${project.buildDir}/nodejs")
+    npmWorkDir = file("${project.buildDir}/npm")
+    nodeModulesDir = file("${project.projectDir}/src/main/frontend")
+}
+
+// Task to install npm dependencies
+task installNpmDependencies(type: NpmTask) {
+    description = 'Install npm dependencies'
+    workingDir = file("${project.projectDir}/src/main/frontend")
+    args = ['install']
+}
+
+// Task to build the React app
+task buildReact(type: NpmTask) {
+    description = 'Build the React app'
+    workingDir = file("${project.projectDir}/src/main/frontend")
+    args = ['run', 'build']
+    dependsOn installNpmDependencies
+}
+
+// Task to copy the built React app to the Spring Boot static resources directory
+task copyReactBuild(type: Copy) {
+    description = 'Copy React build to Spring Boot static resources'
+    from "${project.projectDir}/src/main/frontend/build"
+    into "${project.buildDir}/resources/main/static"
+    dependsOn buildReact
+}
+
+// Make the processResources task depend on the copyReactBuild task
+processResources.dependsOn copyReactBuild

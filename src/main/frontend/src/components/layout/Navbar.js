@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState('realestatelight');
   const location = useLocation();
+
+  // Toggle theme between light and dark
+  const toggleTheme = () => {
+    const newTheme = theme === 'realestatelight' ? 'realestateDark' : 'realestatelight';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,6 +65,13 @@ const Navbar = () => {
             <Link to="/property-comparison" className={isActive('/property-comparison') ? 'nav-link-active' : 'nav-link'}>Compare</Link>
             <Link to="/loan-calculator" className={isActive('/loan-calculator') ? 'nav-link-active' : 'nav-link'}>Loan Calculator</Link>
             <Link to="/rent-vs-buy" className={isActive('/rent-vs-buy') ? 'nav-link-active' : 'nav-link'}>Rent vs Buy</Link>
+            <button 
+              onClick={toggleTheme} 
+              className="btn btn-circle btn-sm btn-ghost text-white"
+              aria-label={theme === 'realestatelight' ? 'Switch to dark mode' : 'Switch to light mode'}
+            >
+              {theme === 'realestatelight' ? <FaMoon className="text-white" /> : <FaSun className="text-white" />}
+            </button>
             <div className="relative group">
               <button className="nav-link flex items-center">
                 More
@@ -114,6 +130,15 @@ const Navbar = () => {
           className={`md:hidden overflow-hidden transition-all duration-400 ease-in-out ${isMenuOpen ? 'max-h-[32rem] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-2 shadow-lg border border-white/20 animate-fadeIn">
+            <div className="flex justify-between items-center px-4 py-2">
+              <span className="text-white font-medium">Theme</span>
+              <label className="swap swap-rotate">
+                <input type="checkbox" onChange={toggleTheme} checked={theme === 'realestateDark'} />
+                <FaSun className="swap-on text-white text-xl" />
+                <FaMoon className="swap-off text-white text-xl" />
+              </label>
+            </div>
+            <div className="divider my-2 bg-white/20"></div>
             <Link to="/" className={`block px-4 py-3 rounded-xl transition-all duration-200 flex items-center ${isActive('/') ? 'bg-primary-dark text-white' : 'text-white hover:bg-primary-dark/50'}`}>
               <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>

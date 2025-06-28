@@ -53,58 +53,76 @@ const Home = () => {
           <h2 className="section-title pb-8">Our Features</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-            <div className="card text-center hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center mx-auto -mt-10 shadow-lg border-4 border-white">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg>
+            <div className="card bg-base-100 shadow-xl hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+              <figure className="px-10 pt-10">
+                <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                </div>
+              </figure>
+              <div className="card-body items-center text-center">
+                <h3 className="card-title text-2xl font-bold">Property Listings</h3>
+                <p className="text-base-content opacity-80">
+                  Browse through our extensive collection of properties in Dubai's most sought-after locations.
+                </p>
+                <div className="card-actions justify-center mt-4">
+                  <Link to="/properties" className="btn btn-primary">
+                    <span>View Properties</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 mt-6 text-gray-800">Property Listings</h3>
-              <p className="text-gray-600 mb-6 px-4">
-                Browse through our extensive collection of properties in Dubai's most sought-after locations.
-              </p>
-              <Link to="/properties" className="btn btn-primary inline-flex items-center justify-center">
-                <span>View Properties</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </Link>
             </div>
 
-            <div className="card text-center hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center mx-auto -mt-10 shadow-lg border-4 border-white">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                </svg>
+            <div className="card bg-base-100 shadow-xl hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+              <figure className="px-10 pt-10">
+                <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                </div>
+              </figure>
+              <div className="card-body items-center text-center">
+                <h3 className="card-title text-2xl font-bold">Property Comparison</h3>
+                <p className="text-base-content opacity-80">
+                  Compare multiple properties side by side to make the best investment decision.
+                </p>
+                <div className="card-actions justify-center mt-4">
+                  <Link to="/property-comparison" className="btn btn-primary">
+                    <span>Compare Now</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 mt-6 text-gray-800">Property Comparison</h3>
-              <p className="text-gray-600 mb-6 px-4">
-                Compare multiple properties side by side to make the best investment decision.
-              </p>
-              <Link to="/property-comparison" className="btn btn-primary inline-flex items-center justify-center">
-                <span>Compare Now</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </Link>
             </div>
 
-            <div className="card text-center hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center mx-auto -mt-10 shadow-lg border-4 border-white">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
+            <div className="card bg-base-100 shadow-xl hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+              <figure className="px-10 pt-10">
+                <div className="bg-primary-light rounded-full w-20 h-20 flex items-center justify-center shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+              </figure>
+              <div className="card-body items-center text-center">
+                <h3 className="card-title text-2xl font-bold">Loan Calculator</h3>
+                <p className="text-base-content opacity-80">
+                  Calculate your mortgage payments, interest rates, and loan terms with our easy-to-use calculator.
+                </p>
+                <div className="card-actions justify-center mt-4">
+                  <Link to="/loan-calculator" className="btn btn-primary">
+                    <span>Calculate Now</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 mt-6 text-gray-800">Loan Calculator</h3>
-              <p className="text-gray-600 mb-6 px-4">
-                Calculate your mortgage payments, interest rates, and loan terms with our easy-to-use calculator.
-              </p>
-              <Link to="/loan-calculator" className="btn btn-primary inline-flex items-center justify-center">
-                <span>Calculate Now</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </Link>
             </div>
           </div>
         </div>
@@ -194,16 +212,22 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 text-center relative">
-          <h2 className="text-4xl font-bold mb-6">Ready to Find Your Dream Property?</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90">
-            Start browsing our extensive collection of properties and use our tools to make an informed decision.
-          </p>
-          <Link to="/properties" className="btn btn-primary bg-white text-primary hover:bg-gray-100 shadow-lg px-8 py-3 text-lg inline-flex items-center">
-            <span>Get Started</span>
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </Link>
+          <div className="card glass max-w-4xl mx-auto">
+            <div className="card-body">
+              <h2 className="card-title text-4xl font-bold justify-center mb-2">Ready to Find Your Dream Property?</h2>
+              <p className="text-xl mb-6 max-w-2xl mx-auto opacity-90">
+                Start browsing our extensive collection of properties and use our tools to make an informed decision.
+              </p>
+              <div className="card-actions justify-center">
+                <Link to="/properties" className="btn btn-lg btn-accent gap-2">
+                  <span>Get Started</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
 
           {/* Decorative elements */}
           <div className="hidden lg:block absolute left-10 top-1/2 transform -translate-y-1/2 w-40 h-40 bg-white bg-opacity-10 rounded-full filter blur-xl"></div>

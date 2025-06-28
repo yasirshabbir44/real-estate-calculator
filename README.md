@@ -26,6 +26,14 @@ A comprehensive real estate application that helps users compare properties, cal
 - React Router 6
 - Axios
 - Tailwind CSS
+- DaisyUI (Tailwind CSS component library)
+- Framer Motion (animations)
+- React Icons (icon library)
+- React Select (enhanced dropdowns)
+- React Hook Form (form handling)
+- Recharts (data visualization)
+- React Hot Toast (notifications)
+- Headless UI (accessible components)
 
 ## Project Structure
 
@@ -126,6 +134,16 @@ npm start
 ```
 
 The React development server will be available at http://localhost:3000 and will proxy API requests to the backend at http://localhost:8080.
+
+#### UI Libraries Documentation
+
+The project uses several UI libraries to enhance the user interface. Documentation for these libraries can be found in the following files:
+
+- `src/main/frontend/UI_LIBRARIES.md` - Overview of all UI libraries used in the project
+- `src/main/frontend/UI_STYLING_IMPROVEMENTS.md` - Details on styling improvements using Tailwind CSS
+- `src/main/frontend/UI_IMPROVEMENTS.md` - General UI improvements made to the application
+- `src/main/frontend/UI_ENHANCEMENTS_SUMMARY.md` - Summary of all UI enhancements
+- `src/main/frontend/DAISYUI_INTEGRATION.md` - Documentation for DaisyUI integration and usage
 
 ## API Documentation
 
